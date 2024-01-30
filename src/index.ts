@@ -6,6 +6,7 @@ import pino from "pino-http";
 import mainRouter from "./routes/routes";
 import mongoose from "mongoose";
 import { otherError, validationError } from "./handlers/error.handler";
+import path from "path";
 
 // app bootstrap
 const app = express();
@@ -22,12 +23,16 @@ app.use(bodyParser.json());
 //mongoose connection
 mongoose.connect(process.env.DB_URL);
 
-app.get("/", function (req: Request, res: Response) {
-	res.send("HELLO");
-});
+app.use(express.static(path.join(__dirname, "public", "browser")));
 
 // api main entry point
-app.use("/api", mainRouter);
+app.use("/api/*", mainRouter);
+
+// serving app
+app.get("*", function (req: Request, res: Response) {
+	console.log("HELLO")
+	res.sendFile(path.join(__dirname, "public", "browser", "index.html"));
+});
 
 // error handling middlewares
 app.use(validationError);
