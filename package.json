@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
-		"build": "cd ./client && npm install && npm run build  && cd .. && tsc",
+		"build": "cd ./client && npm install && npm run build && cd .. && pwd && tsc",
 		"start": "node dist/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -14,7 +14,6 @@
 	"devDependencies": {
 		"@types/cors": "^2.8.17",
 		"@types/express": "^4.17.21",
-		"typescript": "^5.3.3",
 		"tsx": "^4.7.0"
 	},
 	"dependencies": {
@@ -24,6 +23,7 @@
 		"express": "^4.18.2",
 		"mongoose": "^8.1.0",
 		"pino-http": "^9.0.0",
-		"zod": "^3.22.4"
+		"zod": "^3.22.4",
+		"typescript": "^5.3.3"
 	}
 }
