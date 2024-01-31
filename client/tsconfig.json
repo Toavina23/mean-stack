@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "../src/public",
+    "outDir": "../dist/public",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
