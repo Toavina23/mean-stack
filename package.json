@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
-		"build": "cd ./client && npm install && npm run build && cd .. && tsc && ll",
+		"build": "cd ./client && npm install && npm run build && cd .. && pwd && tsc && ls -l",
 		"start": "node dist/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
